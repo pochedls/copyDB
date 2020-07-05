@@ -1,0 +1,11 @@
+sourceDB = 'sourceDbName'
+sourcePassword = 'sourcePassword'
+sourceUser = 'sourceUser'
+sourceHost = 'localhost'
+sourcePath = '/usr/local/var/mysql/'
+
+targetDB = 'targetDbName'
+targetPassword = 'targetPassword'
+targetUser = 'targetUser'
+targetHost = 'localhost'
+targetPath = '/usr/local/var/mysql/'
