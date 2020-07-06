@@ -1,11 +1,22 @@
-sourceDB = 'sourceDbName'
-sourcePassword = 'sourcePassword'
-sourceUser = 'sourceUser'
-sourceHost = 'localhost'
-sourcePath = '/usr/local/var/mysql/'
+# packages
+import os
 
-targetDB = 'targetDbName'
-targetPassword = 'targetPassword'
-targetUser = 'targetUser'
-targetHost = 'localhost'
-targetPath = '/usr/local/var/mysql/'
+
+# current working directory for convenience
+cwd = os.getcwd()
+
+# source properties
+source_dbname = 'sourceDbName'
+source_password = 'sourcePassword'
+source_user = 'sourceUser'
+source_host = 'localhost'
+source_datapath = '/usr/local/var/mysql/'
+source_export = cwd + '/export/'
+
+# target properties
+target_dbname = 'targetDbName'
+target_password = 'targetPassword'
+target_user = 'targetUser'
+target_host = 'localhost'
+target_datapath = '/usr/local/var/mysql/'
+target_import = cwd + '/export/'
