@@ -7,11 +7,13 @@ export tables of an existing database and `import.py` to import that data into a
 
 #### Create environment
 
-*With Conda:*
+**With Conda**:
+
     conda create -n sql mysql-connector-python mysqlclient ipython python=3
     conda activate sql
 
-*With pip:*
+**With pip**:
+
     pip install mysqlclient
     pip install mysql-connector-python
 
@@ -25,9 +27,12 @@ export tables of an existing database and `import.py` to import that data into a
     python export.py
     python import.py
 
-*Or via commandline arguments*:
+**Or via commandline arguments**:
     
     ./export.py -v false -db test -u root -p pwd -c localhost -dp /usr/local/var/mysql/ -e export/
+    ./import.py -v false
+
+Note: command line arguments will override config.py settings.
 
 ## Other notes
 
