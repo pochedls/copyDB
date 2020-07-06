@@ -5,7 +5,7 @@ export tables of an existing database and `import.py` to import that data into a
 
 ## Setup
 
-#### Create environment
+### Create environment
 
 **With Conda**:
 
@@ -17,7 +17,7 @@ export tables of an existing database and `import.py` to import that data into a
     pip install mysqlclient
     pip install mysql-connector-python
 
-#### Update config file
+### Update config file
 
 * Rename `configTemplate.py` to `config.py`
 * Update arguments in `config.py` to correspond to correct MySQL database
