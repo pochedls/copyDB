@@ -34,6 +34,7 @@ Alternatively, these packages can be installed with pip:
 
 # package / function imports
 import os
+import sys
 import glob
 import config
 import MySQLdb
@@ -92,11 +93,17 @@ if INIPYTHON is False:
         else:
             locals()[arg] = getattr(args, arg)
 
+# get slash style
+if sys.platform[0:3] == 'win':
+    slashStyle = '\\'
+else:
+    slashStyle = '/'
+
 # get tables to import
 tables = glob.glob(importpath + '/*.ibd')
 
 # get table names
-tables = [table.split('/')[-1].split('.ibd')[0] for table in tables]
+tables = [table.split(slashStyle)[-1].split('.ibd')[0] for table in tables]
 
 # get db connections
 if verbose:
@@ -137,7 +144,7 @@ for table in tables:
     query = 'ALTER TABLE ' + table + ' DISCARD TABLESPACE;'
     result = quickQuery(dbTarget, query)
     # move file
-    shutil.copy(importpath + table + '.ibd', datapath + '/' + dbname + '/' + table + '.ibd')
+    shutil.copy(importpath + table + '.ibd', datapath + slashStyle + dbname + slashStyle + table + '.ibd')
     # import table space
     query = 'ALTER TABLE ' + table + ' IMPORT TABLESPACE;'
     result = quickQuery(dbTarget, query)

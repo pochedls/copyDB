@@ -7,7 +7,7 @@ export tables of an existing database and `import.py` to import that data into a
 
 ### Create environment
 
-**With Conda**:
+**With anaconda**:
 
     conda create -n sql mysql-connector-python mysqlclient ipython python=3
     conda activate sql
